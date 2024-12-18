@@ -28,20 +28,14 @@ variable "enable_dns_hostnames" {
 variable "public_subnets" {
   description = "Blocos CIDR das subnets públicas"
   type        = list(string)
-  validation {
-    condition     = length(var.public_subnets) == length(var.azs)
-    error_message = "O número de subnets públicas deve corresponder ao número de zonas de disponibilidade."
-  }
 }
+
 
 variable "private_subnets" {
   description = "Blocos CIDR das subnets privadas"
   type        = list(string)
-  validation {
-    condition     = length(var.private_subnets) == length(var.azs)
-    error_message = "O número de subnets privadas deve corresponder ao número de zonas de disponibilidade."
-  }
 }
+
 
 variable "azs" {
   description = "Lista de zonas de disponibilidade"
