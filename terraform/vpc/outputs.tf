@@ -30,3 +30,8 @@ output "nat_gateway_id" {
 output "private_route_table_id" {
   value = aws_route_table.private.id
 }
+
+output "cidr_block" {
+  value = aws_vpc.this.cidr_block
+}
+
